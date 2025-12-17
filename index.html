@@ -1,0 +1,106 @@
+<html lang="en">
+<head> 
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+   
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: Blueviolet;
+}
+
+.container div {
+  background-color: Yellow;
+  margin: 1em;
+  padding: 1em;
+}
+</style>
+</head>
+
+<body>
+<header>
+<h1 class="fontbig">My website for European Studies</h1>
+<p>Theme inspired by popular Dutch movie <em>De Marathon (2012).</em></p>
+<container><img src="Theme.jpg" alt="De Marathon (2012)">
+</container>  
+<p><button onclick="getAdvice()">Get advice from the athletes</button></p>
+<p id="daily-quote"></p>
+<script>
+async function getAdvice() {
+  const response = await fetch(
+    'https://api.adviceslip.com/advice',
+    { cache: 'no-cache' }
+  );
+  const data = await response.json();
+  document.getElementById("daily-quote").textContent = data.slip.advice;
+}
+</script>
+</header>
+
+<main>
+<h2 id="field-of-study"> Field of study</h2>
+<p>There are two academic fields that are relevant to cover with regards to the implementation of digital technologies in <em>my field of study</em>. Having completed a bachelor in history, this is the first academic field covered. The second field is in European studies. The <a href="https://www.eur.nl/en/bachelor/international-bachelor-history">International Bachelor of History</a> in Rotterdam was considered part of the History, Culture and Communication faculty and the <a href="https://masters.au.dk/europeanstudies">Master European Studies</a> in Aarhus is part of the Arts faculty. (Erasmus University Rotterdam, 2025; Aarhus University, 2025) Both of these faculties and disciplines can be found somewhere in between the humanities and social sciences. However, when it comes to research and the increased complexity of digital technologies both disciplines have followed a similar trajectory. Contemporary datasets have evolved significantly over the last decades, and are currently conceivably composed of social media data, digitised corpora and rich digital multimodal data. This evolution requires limited knowledge of all aspects of the datasets, such as hardware, software, data formats, interwoven configuration and dependencies. (Housley et al., 2023)</p>
+  
+<h3 id="history">History</h3>
+<p>History is a discipline associated with archives and libraries, except modern historians might have never set foot in either of them. A library is more likely to have been visited, although probably to find some calmness and study on a laptop rather than to open a physical book. Modern historians don’t have the need to physically visit archives anymore since a significant amount of archives have done a great job at digitizing their data. A great example of this is the digital archive <a href="https://www.delpher.nl/nl/kranten">Delpher</a> that has made every Dutch newspaper from 1618 until 1995 publicly available online. (Delpher, 2025) These kinds of digitized databases provide significant value to various academic disciplines and increase the ease and opportunities of researchers interacting with databases. However, there are also downsides to the digitalization of archives. Because digital archives are so much cheaper to maintain compared to physical archives, over the long run, it is questioned whether physical archives will be preserved into the future. (Custer, 2014) Digital archives cannot run into issues if physical archives stop receiving funding. Taking away the ability to provide source materials upon being questioned, affects the legitimacy of the empirical discipline of History. These fears aside, the digitalization of archival data has transformed the discipline in a positive way. Access to information has improved and this increased the efficiency of doing research in the discipline. Once the information has been accessed, modern historians can start utilizing the new tools in their arsenal:</p>
+<ul>
+<li>Text mining</li>
+<li>Topic modeling</li>
+<li>Visualizing data</li>
+</ul>
+<p>(Ebbrecht-Hartmann et al., 2023a; Ebbrecht-Hartmann et al., 2023b)</p>
+ 
+<h3 id="european-studies">European Studies</h3>
+<p>For European Studies, digital technologies have allowed a variety of documents to become digitally available. This has increased the availability and ease with which researchers are able to use EU documentation for research. The available digital documents range from policy documents to EU law, and from parliamentary debates to media coverage. The availability of these documents allows researchers to discover European discourse and public opinion at a large scale and over long periods through computational and comparative analysis. In European studies one can also look at the digital platforms themselves, the power they have, and the role the EU plays in regulating these platforms. An example of a significant cultural project that has been launched in order to promote the strengthening of a sense of European Identity, is <a href="https://www.europeana.eu/en">Europeana</a>. (Europeana, 2025) The database collects content from many different institutions and congregates them into an easy to use collection for cultural research. Funded by the European Commission, the initiative’s aim is to digitalize the cultural heritage sector, improving the ability to use European cultural heritage for research and education. Looking at european from a more political standpoint, text analysis tools provide a way to code and analyse large quantities of political speeches, eu documents and social media data. Qualitative data analysis tools provide the ability to perform discourse analysis on a large scale. On top of all the different digital technologies that have become available in recent decades, digital polling- and opinion data is frequently used in ongoing research in the academic field of European Studies. (Zaagsma, 2023)</p>
+
+<h2>APIs and Github</h2>
+<p>Digital technologies are changing the way the academic world interacts. Especially when it comes to digital tools and infrastructure. For a study such as European Studies digital tools are changing the way knowledge is produced, shared and criticized. Two key concepts are central in these developments and are expanded on in the paragraphs below. </p>
+
+<h3 id="apis">APIs</h3>
+<p>Application Programming Interfaces (APIs) are defined as “a set of functions and procedures that allow the creation of applications which access the features or data of an operating system, application, or other service, enabling third parties to use the functionality of that software application”. (ScienceDirect, 2025) In summary, APIs act as a connecting layer between two different programs or systems, giving them the option to exchange data and functionalities. The API is able to provide multiple functions, procedures and protocols that decide which actions a client can perform when interacting with software components. APIs provide the connection between provider and end user that “allow modular pieces of functionally to be incorporated”, ranging from “a single function to hundreds of classes, methods, data types, enumerations, and constants, with implementations that may be proprietary or open source”. (ScienceDirect, 2025) The underlying implementation is explicitly restricted in order to support modularity, reusability and safe access. In contemporary software structures that have standardized interfaces communicate over networks, APIs are the foundation that allow this to take place. From an academic perspective, APIs provide an increased compatibility between different systems that allow for complex software infrastructures to be built. As a European Studies student, EU documentation can easily be accessed through APIs. This ease of access to whole databases of documents significantly increases the research scopes that are possible within our academic discipline. An example of the usage of API can be found at the top of the website. You can ask the athletes for advice, the response is an API driven output that shows nothing on the backend, and only gives the end-user the desired information. </p>
+
+<h3 id="github">Github</h3>
+<p>Github is a web-based platform that allows shared software development and version changes to be done in an open source and effective way. The platform combines Git repositories with social and organizational functionalities that has made it become a favourite amongst software developers. Github provides researchers and developers the opportunity to save source codes, documentation and other data in distributed repositories. Every iteration and change to the repository is saved, improving reproducibility and transparency. Different users are able to contribute to different projects and can send branch and pull requests, in order to create parallel developments, whilst stimulating community building projects in open source projects. Discussions on the direction of projects and if different branches should be formed can always be had in the main branch of development. (Alrashedy &amp; Binjahlan, 2024) A good example of what students of European Studies can use github for is the <a href="https://michalovadek.github.io/eu-veto-tracker/">EU Veto tracker</a>. (Ovadek, 2025) This website hosts its data and source code on github. The data provided allows for the tracking of different EU member states’ veto behaviour and tracks the amount of times member states have used their veto. This data allows for different kinds of research to be collected and analysed. An interesting thing to note is that the website has gone dormant and did not receive any updates in the last half year. In case someone is willing to update the required data with new entries, they would not have to build an entire website from scratch in order to facilitate the updates. Since the original website was built on github. All the starting blocks are in place to easily recreate a similar concept. This highlights the reproducibility aspect that github provides with its open source platform.</p>
+
+<h2 id="website-explainer">Website Explainer</h2>
+<p>In the following paragraphs, the making of the website is explained. First, there is a short overview of the different languages used, and in what capacity they are utilized. Second, is the explanations for content and stylistic choices of the website. There has been a deliberate choice not to go too much into the coding details for every choice. There is more focus provided on the personal choices made in building the website. This is done because the coding details can be seen in the files that are visible on Github. </p>
+
+<h3 id="markdown-html-and-css">Markdown, HTML and CSS</h3>
+<p>Over the weeks following the Digital Technologies in the Humanities course, students had to adapt to three different ways of writing. Markdown, HyperText Markup Language (HTML) and Cascading Style Sheets (CSS). Since the technical submission requires knowledge of all three, following the course structure and checking the provided resources helped to gather an understanding. Markdown is a simple, readable text format that has some characters performing certain functions. It allows for authors to quickly write a structured document that can be used in different spaces without having to understand more complex codes. HTML functions as the standard for the structure of webpages, it defines headers, paragraphs and lists for example. Since most of my writing was already written in Markdown, I used an online converter to change my texts into HTML in order for it to be shown correctly on my website. CSS is used to provide a style for the website. it allows the visual aspects of the text to be changed. This makes layout, colours, alignment, and responses upon clicks or hovers to be programmed. Together, all three of these languages are able to form a system that makes it possible to create my first website. </p>
+
+<h3 id="functions">Functions</h3>
+<p>In order to go a bit further into the decisions I have made with regards to my first website, several things will be explained in this paragraph. In order to give the website a bit of personal flair, some aspects of website building have not been done in the most beautiful or the most effective way. But due to personal preference and capabilities, choices have been made in order to produce a website to my liking. We have been practicing several aspects of website building in exercises in class during the course. This has formed the base understanding of working with different software programs and different languages to make the software do what we want. The first thing that was worked on during the course once we got to trying out building our websites, was the header. This is an essential part of most websites and mine is not unique in that sense. However, I wanted my website to be unique and therefore I landed on quite a dashing theme. Bright yellow and purple. This is due to being inspired by a movie that I loved as a teenager. Located in the body part of HTML, my Header consists of the following elements. An &lt; h1&gt; heading, &lt; p&gt; some text , &lt; container&gt; an image and finally &lt; button&gt;&lt; script&gt; a button that runs my API. The &lt; h1&gt; heading has been styled to have a beautiful yellow colour on a purple background in combination with a large font. The text &lt; p&gt; below it gives some context to the dashing theme colours that should be explained early on the website. Finally, the picture completes the package that justifies the thematic colour scheme. Peer reviews of my website have commented on the theme being “eye watering” and “an interesting choice”. However, art is subjective and personal choices give static websites some character. Uploading the image onto the website was relatively straightforward once the container function was explained in class. The final part of my header required more knowledge. The button that is aligned centrally on the bottom of the header, runs a script that receives advice from an API. The API consulted for this is the <a href="https://api.adviceslip.com/advice">Advice slip API</a>.
+The script that runs the API has been provided in the course content and in class exercises. Since most of my writing was done in markdown and the website was built in HTML, it was easy to use an online converter and make my text compatible with the given format. The main part of the text was filled in with converted markdown text into HTML. Some stylistic choices were made with regards to the &lt; h2&gt; and &lt; h3&gt; headers in order for the thematic style of the website to be consistent. therefore they have a purple background colour and a yellow text colour. For the list of references, I made the stylistic choice that a flexbox could be used for the list. With some tampering to the code provided in the course content, I managed to make the flexbox direction a column. This was done in order to better symbolize a traditional bibliography. The final elements on my website are another picture, another button and the footer. The final picture symbolizes the end of the website and the finish is in sight. The final button takes the user towards the IMDb page of the movie that inspired the theme of the website. Finally, the footer is providing text on who the website is built by and has a right alignment on the webpage. </p>
+
+
+<div class="container">
+  <h2>List of consulted works:</h2>
+  
+  <div>Aarhus University. (2025, December 4). <em>Master’s degree programme in European Studies</em>. Aarhus University. <a href="https://masters.au.dk/europeanstudies">https://masters.au.dk/europeanstudies</a></div>
+  <div>Alrashedy, K., &amp; Binjahlan, A. (2024). <em>How do Software Engineering Researchers Use GitHub? An Empirical Study of Artifacts &amp; Impact</em>. <a href="https://doi.org/10.48550/arXiv.2310.01566">https://doi.org/10.48550/arXiv.2310.01566</a></div>
+  <div>Custer, T. (2014). <em>A Historiographical Analysis of Digital History</em>.</div>
+  <div>Delpher. (2025). <em>Kranten</em>. <a href="https://www.delpher.nl/nl/kranten">https://www.delpher.nl/nl/kranten</a></div>  
+  <div>Ebbrecht-Hartmann, T., Stiassny, N., &amp; Henig, L. (2023a). Digital visual history: Historiographic curation using digital technologies. <em>Rethinking History, 27</em>(2), 159–186. <a href="https://doi.org/10.1080/13642529.2023.2181534">https://doi.org/10.1080/13642529.2023.2181534</a></div>
+  <div>Ebbrecht-Hartmann, T., Stiassny, N., &amp; Henig, L. (2023b). Digital visual history: Historiographic curation using digital technologies. <em>Rethinking History, 27</em>(2), 159–186. <a href="https://doi.org/10.1080/13642529.2023.2181534">https://doi.org/10.1080/13642529.2023.2181534</a></div>
+  <div>Erasmus University Rotterdam. (2025). <em>Bachelor International Bachelor History</em>. <a href="https://www.eur.nl/en/bachelor/international-bachelor-history">https://www.eur.nl/en/bachelor/international-bachelor-history</a></div>
+  <div>Europeana. (2025). <em>Discover Europe’s digital cultural heritage</em>. <a href="https://www.europeana.eu/en">https://www.europeana.eu/en</a></div>
+  <div>Housley, W., Edwards, A., Beneito-Montagut, R., &amp; Fitzgerald, R. (2023). <em>The SAGE Handbook of Digital Society</em>. SAGE Publications Ltd. <a href="https://doi.org/10.4135/9781529783193">https://doi.org/10.4135/9781529783193</a></div>
+  <div>Ovadek, M. (2025, July). <em>michalovadek/eu-veto-tracker: Tracking Member State Vetos</em>. Tracking Member State Vetos. <a href="https://github.com/michalovadek/eu-veto-tracker">https://github.com/michalovadek/eu-veto-tracker</a></div>
+  <div>ScienceDirect. (2025). <em>Application Programming Interface</em>. ScienceDirect Topics. <a href="https://www.sciencedirect.com/topics/computer-science/application-programming-interface">https://www.sciencedirect.com/topics/computer-science/application-programming-interface</a></div>
+  <div>Zaagsma, G. (2023). Digital History and the Politics of Digitization. <em>Digital Scholarship in the Humanities, 38</em>(2), 830–851. <a href="https://doi.org/10.1093/llc/fqac050">https://doi.org/10.1093/llc/fqac050</a></div>
+  
+</div>
+
+<p><container><img src="Finish.jpg" alt="De Marathon (2012)">
+</container> </p>
+<container><button onclick="window.location.href='https://www.imdb.com/title/tt2401621/'">
+Go to IMDb
+</button></container>
+
+</main>         
+</body>
+<footer> Built by Lucien Wagemaker</footer>
+</html>
